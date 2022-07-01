@@ -73,20 +73,6 @@ public class MainSceneController {
         });
     }
 
-    @FXML
-    private void addMultiplePhotos(ActionEvent event) {
-        FileChooser fc = new FileChooser();
-        fc.setTitle("Select Multiple Files");
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg"));
-        List<File> files = fc.showOpenMultipleDialog(null);
-        if (files != null) {
-            for (int i = 0; i < files.size(); i++) {
-                String path = files.get(i).getAbsolutePath();
-                addImgToMap(new Image("file:" + files.get(i)), path);
-            }
-        }   
-    }
-
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      *                  *** CALLED WHEN USER CHOOSES TO START SLIDESHOW ***                        *           
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *                       
