@@ -18,7 +18,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
-            
+            System.out.println(e);
         }
     }
  
