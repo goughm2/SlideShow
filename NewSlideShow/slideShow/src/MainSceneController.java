@@ -23,8 +23,13 @@ public class MainSceneController {
     // Two arraylists are used, poor space complexity and non-optimal solution
     final ArrayList<Image> imagesAL = new ArrayList<>();
     final ArrayList<String> imageName = new ArrayList<>();
+    
     private int counter = 0;
 
+    @FXML
+    private Button addMultiplePhotos;
+    @FXML
+    private Button addSinglePhoto;
     @FXML
     private ImageView ivImg;
     @FXML
@@ -37,22 +42,35 @@ public class MainSceneController {
     private Label curImg;
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-     *  *** CALLED WHEN SINGLE IMAGE IS ADDED TO SLIDESHOW *** *
+     *  *** CALLED WHEN IMAGE(S) IS ADDED TO SLIDESHOW *** * * *
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
      * Opens finder (Mac OS)                                   * 
      * User has option to choose a JPEG image                  * 
-     * Image is sent to addImgToMap()                          *
+     * Image and path is sent to addImgToMap()                 *
      * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     @FXML
-    private void addSinglePhoto(ActionEvent event) {
+    private void addImage(ActionEvent event) {
         FileChooser fc = new FileChooser();
         fc.setTitle("Select Single File");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg"));
-        File file = fc.showOpenDialog(null);
-        if(file != null){
-            String path = file.getAbsolutePath();
-            addImgToMap(new Image("file:" + file), path);
-        }
+
+        addSinglePhoto.setOnAction(e -> {
+            File file = fc.showOpenDialog(null);
+            if(file != null){
+                String path = file.getAbsolutePath();
+                addImgToMap(new Image("file:" + file), path);
+            } 
+        });
+
+        addMultiplePhotos.setOnAction(e -> {
+            List<File> files = fc.showOpenMultipleDialog(null);
+            if (files != null) {
+                for (int i = 0; i < files.size(); i++) {
+                    String path = files.get(i).getAbsolutePath();
+                    addImgToMap(new Image("file:" + files.get(i)), path);
+                }
+            }  
+        });
     }
 
     @FXML
