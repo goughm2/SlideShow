@@ -11,6 +11,7 @@ As Visual Studio Code has been my editor of choice you must do the following to 
     - Add "vmArgs": "--module-path /path/to/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.fxml"
     - Change --module-path  above to the path of your javaFX directory.
     - Add javaFX jar files to Referenced Libraries.
+    - Main java classes are in /src.
     - To start Application call the main method in App.java.
 
 Application Information
