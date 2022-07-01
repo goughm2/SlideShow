@@ -114,6 +114,7 @@ public class MainSceneController {
             curImg.setText(null); 
             this.imagesAL.clear();    
             this.imageName.clear();
+            this.counter = 0;
         });
 
         /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
