@@ -21,8 +21,8 @@ public class MainSceneController {
     //final HashMap<Image, String> imagesHM = new HashMap<Image, String>();
 
     // Two arraylists are used, poor space complexity and non-optimal solution
-    final ArrayList<Image> imagesAL = new ArrayList<>();
-    final ArrayList<String> imageName = new ArrayList<>();
+    private ArrayList<Image> imagesAL = new ArrayList<>();
+    private ArrayList<String> imageName = new ArrayList<>();
     
     private int counter = 0;
 
