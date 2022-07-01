@@ -1,18 +1,27 @@
-## Getting Started
+Nuclera SlideShow Project by Max Gough
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A JavaFX desctop application was created that will display a SlideShow of images.
 
-## Folder Structure
+Run Information.
+-----------------
+The application uses JavaFX version 18.0.1 - I have not tested to see if it is functional on earlier versions.
+As Visual Studio Code has been my editor of choice you must do the following to be able to run the application:
+    - Install JavaFx.
+    - Open launch.json file that is in .vscode folder.
+    - Add "vmArgs": "--module-path /path/to/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.fxml"
+    - Change --module-path  above to the path of your javaFX directory.
+    - Add javaFX jar files to Referenced Libraries.
+    - To start Application call the main method in App.java.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+Application Information
+-----------------------
+The user has control over many aspects of the slideshow such as:
+    - Add 1..n images that the user wants to be in the slideshow animation.
+    - Once happy with the images selected the start button can be clicked.
+    - Even during the animation, the user can add more images. For these the changes to take effect, click
+      the restart button.  
+    - The restart button can be clicked anytime after the animation has begun.
+    - If the user added an image they didn't want to, they have the option to clear their entire image selection.
+    - This button will also terminate the slideshow if it is running.
+    - The pause button will indefinitely freeze the image on screen until clicked again.
+    
