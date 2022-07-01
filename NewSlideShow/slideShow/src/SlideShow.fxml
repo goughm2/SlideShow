@@ -8,12 +8,12 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
    <children>
       <Label fx:id="curImg" layoutX="200.0" layoutY="14.0" prefHeight="17.0" prefWidth="202.0" />
-      <Button layoutX="6.0" layoutY="314.0" mnemonicParsing="false" onAction="#addSinglePhoto" text="Add Single Image" />
+      <Button fx:id="addSinglePhoto" layoutX="6.0" layoutY="314.0" mnemonicParsing="false" onAction="#addImage" text="Add Single Image" />
       <Button layoutX="246.0" layoutY="270.0" mnemonicParsing="false" onAction="#startSlideShow" text="Start SlideShow" />
       <ImageView fx:id="ivImg" fitHeight="195.0" fitWidth="444.0" layoutX="76.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="btnClear" layoutX="262.0" layoutY="314.0" mnemonicParsing="false" text="Clear Images" />
       <Button fx:id="btnPause" layoutX="357.0" layoutY="314.0" mnemonicParsing="false" text="Pause SlideShow" />
       <Button fx:id="btnRestart" layoutX="476.0" layoutY="314.0" mnemonicParsing="false" text="Restart SlideShow" />
-      <Button layoutX="127.0" layoutY="314.0" mnemonicParsing="false" onAction="#addMultiplePhotos" text="Add Multiple Images" />
+      <Button fx:id="addMultiplePhotos" layoutX="127.0" layoutY="314.0" mnemonicParsing="false" onAction="#addImage" text="Add Multiple Images" />
    </children>
 </AnchorPane>
