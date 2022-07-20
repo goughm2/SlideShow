@@ -1,4 +1,4 @@
-Nuclera SlideShow Project by Max Gough
+SlideShow Project by Max Gough
 
 A JavaFX desctop application was created that will display a SlideShow of images.
 
