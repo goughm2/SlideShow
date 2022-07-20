@@ -18,18 +18,11 @@ import javafx.stage.FileChooser;
 
 public class MainSceneController {
 
-    //final HashMap<Image, String> imagesHM = new HashMap<Image, String>();
-
-    // Two arraylists are used, poor space complexity and non-optimal solution
     private ArrayList<Image> imagesAL = new ArrayList<>();
     private ArrayList<String> imageName = new ArrayList<>();
     
     private int counter = 0;
 
-    @FXML
-    private Button addMultiplePhotos;
-    @FXML
-    private Button addSinglePhoto;
     @FXML
     private ImageView ivImg;
     @FXML
@@ -54,23 +47,13 @@ public class MainSceneController {
         fc.setTitle("Select Single File");
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpg", "*.jpeg"));
 
-        addSinglePhoto.setOnAction(e -> {
-            File file = fc.showOpenDialog(null);
-            if(file != null){
-                String path = file.getAbsolutePath();
-                addImgToMap(new Image("file:" + file), path);
-            } 
-        });
-
-        addMultiplePhotos.setOnAction(e -> {
-            List<File> files = fc.showOpenMultipleDialog(null);
-            if (files != null) {
-                for (int i = 0; i < files.size(); i++) {
-                    String path = files.get(i).getAbsolutePath();
-                    addImgToMap(new Image("file:" + files.get(i)), path);
-                }
-            }  
-        });
+        List<File> files = fc.showOpenMultipleDialog(null);
+        if (files != null) {
+            for (int i = 0; i < files.size(); i++) {
+                String path = files.get(i).getAbsolutePath();
+                addImgToMap(new Image("file:" + files.get(i)), path);
+            }
+        }  
     }
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
